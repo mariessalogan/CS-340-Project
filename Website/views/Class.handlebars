@@ -1,0 +1,46 @@
+
+	<H1>Class Management</H1>
+	<H2>Here you can track the classes in the database</H2>
+	<H3>Below is a list of classes. At the bottom you can add new classes with the webform</H3>
+		Search Name:<input type="text" id="name" name="name">
+	
+	<input type="submit" name="Submit">
+	<table id ="table">
+		<tr>
+			<th ID = "cid" type ="hidden"></th>
+			<th id = "name">Name</th>
+			<th id = "Pro">pro</th>
+			<th id="Con">Con</th>
+			
+			<th id="Main_Weapon">Main Weapon</th>
+			
+		</tr>
+		{{#each classes}}
+		<tr>
+			<td type='hidden'>{{Class_id}}</td>
+			<td>{{name}}</td>
+			<td>{{Pro}}</td>
+			<td>{{Con}}</td>
+			
+			<td>{{Main_Weapon}}</td>
+			
+		</tr>
+		{{/each}}
+				
+	</table>
+	<form id ="addClass" action="/Class" method="post">
+		<fieldset>
+			Name:<input type="text" id="name" name="name">
+			Pro:<input type="text" id="Pro" name="Pro">
+			Con:<input type="text" id="Con" name="Con">
+			
+			Main Weapon:<select id = "Main_Weapon">
+				{{#each weapons}}
+				<option value="{{Weapon_id}}">{{name}}</option>
+				{{/each}}
+				</select>
+			
+			
+			<input type="submit" name="Submit">
+		</fieldset>
+	</form>

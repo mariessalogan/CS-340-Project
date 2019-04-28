@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<title>D&D</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    {{#each jsscripts}}
+    <script src="/static/{{this}}"></script>
+    {{/each}}
+<style type="text/css">
+		/*help with styling from W3 schools*/
+		.btn a {
+   			 background-color: #4CAF50; /* Green background */
+		    border: 1px solid green; /* Green border */
+		    color: white; /* White text */
+		    padding: 10px 24px; /* Some padding */
+		    cursor: pointer; /* Pointer/hand icon */
+		    float: left; /* Float the buttons side by side */
+		    margin: auto;
+		    text-align: center;
+		}
+
+		.btn button:not(:last-child) {
+		    border-right: none; /* Prevent double borders */
+		}
+
+		/* Clear floats (clearfix hack) */
+		.btn:after {
+		    content: "";
+		    clear: both;
+		    display: table;
+		}
+
+		/* Add a background color on hover */
+		.btn button:hover {
+		    background-color: #3e8e41;
+		}
+
+		#table {
+		    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		    border-collapse: collapse;
+		    width: 100%;
+		}
+
+		#table td, #table th {
+		    border: 1px solid #ddd;
+		    padding: 8px;
+		}
+
+		#table tr:nth-child(even){background-color: #f2f2f2;}
+
+		#table tr:hover {background-color: #ddd;}
+
+		#table th {
+		    padding-top: 12px;
+		    padding-bottom: 12px;
+		    text-align: left;
+		    background-color: #4CAF50;
+		    color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="btn"  >
+		<a href="/" class="w3-btn w3-black" >Home</a>
+		<a href="/Character" class="btn"> Character</a>
+		<a href="/Class" class="btn">Class</a>
+		<a href="/Weapons" class="btn" >Weapons</a>
+		<a href="/Race" class="btn" >Race</a>
+		
+	</div>
+	<div align="center">
+	{{{body}}}
+	</div>
+
+</body>
+</html>

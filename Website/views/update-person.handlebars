@@ -1,0 +1,22 @@
+<h1>Update {{person.name}} :</h1>
+<form id="update-person" action="/Character" method="post">
+    First name: <input type="text" name="name" value="{{person.name}}"><br>
+    Enemy: <select>
+				<option id="enemy" value="null">Unknown</option>
+				<option id="enemy" value="Player">Player</option>
+				<option id="enemy" value="Friend">Friend</option>
+				<option id="enemy" value="Enemy">Enemy</option>
+			</select>
+    Alignment: <select>
+				<option id="alignment" value="Neutral">Neutral</option>
+				<option id="alignment" value="Lawful Good">Lawful Good</option>
+				<option id="alignment" value="Chaotic Good">Chaotic Good</option>
+				<option id="alignment" value="Good">Good</option>
+				<option id="alignment" value="Lawful Neutral">Lawful Neutral</option>
+				<option id="alignment" value="Chaotic Neutral">Chaotic Neutral</option>
+				<option id="alignment" value="Evil">Evil</option>
+				<option id="alignment" value="Lawful Evil">Lawful Evil</option>
+				<option id="alignment" value="Chaotic Evil">Chaotic Evil</option>
+				</select>
+</form>
+<button onclick="updatePerson({{person.id}})">Update</button>

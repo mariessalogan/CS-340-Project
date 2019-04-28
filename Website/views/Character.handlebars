@@ -1,0 +1,70 @@
+
+	<H1>Character Management</H1>
+	<H2>Here you can track your character creation</H2>
+	<H3>Below is a list of characters. At the bottom you can add new characters with the webform</H3>
+	<form id="selectCharacter" action="/Character/:id" method="get">
+		Search by ID:<input type="number" id="id" name="id">
+	
+		<input type="submit" name="Search">
+	</form>
+	<table id ="table">
+		<tr>
+			<th ID = "cid">ID</th>
+			<th id = "name">Name</th>
+			<th id = "Class">Class</th>
+			<th id="Race">Race</th>
+			<th id="Alignment">Alignment</th>
+			<th id="Enemy">Enemy?</th>
+			<th id="Edit">Edit</th>
+					
+		</tr>
+		{{#each people}}
+		<tr>
+			<td>{{id}}</td>
+			<td>{{name}}</td>
+			<td>{{CLASS}}</td>
+			<td>{{RACE}}</td>
+			<td>{{alignment}}</td>
+			<td>{{enemy}}</td>
+			<td><a href="/Character/{{id}}"><button type="button">Edit</button></a></td>
+			
+		</tr>
+		{{/each}}
+		
+	</table>
+
+	<form id ="addcharacter" action="/Character" method="post">
+		<fieldset>
+			Name:<input type="text" id="name" name="name">
+			Enemy?:<select>
+				<option id="enemy" value="null">Unknown</option>
+				<option id="enemy" value="Player">Player</option>
+				<option id="enemy" value="Friend">Friend</option>
+				<option id="enemy" value="Enemy">Enemy</option>
+			</select>
+			Alignment:<select>
+				<option id="alignment" value="Neutral">Neutral</option>
+				<option id="alignment" value="Lawful Good">Lawful Good</option>
+				<option id="alignment" value="Chaotic Good">Chaotic Good</option>
+				<option id="alignment" value="Good">Good</option>
+				<option id="alignment" value="Lawful Neutral">Lawful Neutral</option>
+				<option id="alignment" value="Chaotic Neutral">Chaotic Neutral</option>
+				<option id="alignment" value="Evil">Evil</option>
+				<option id="alignment" value="Lawful Evil">Lawful Evil</option>
+				<option id="alignment" value="Chaotic Evil">Chaotic Evil</option>
+				</select>
+			Class:<select>
+				{{#each classes}}
+				<option id="class" value="{{Class_id}}">{{name}}</option>
+				{{/each}}
+				</select>
+			Race:<select>
+				{{#each races}}
+				<option id="race" value="{{Race_id}}">{{name}}</option>
+				{{/each}}
+				</select>
+			
+			
+			<input type="submit" name="Submit">
+		</fieldset>
+	</form>

@@ -1,0 +1,8 @@
+<h1>Update {{weapon.name}} :</h1>
+<form id="update-weapon" action="/Weapon" method="post">
+    Weapon name: <input type="text" name="name" value="{{weapon.name}}"><br>
+    Damage Dice: <input type="text" name="name" value="{{weapon.Damage_Dice}}"><br>
+    Weapon Type: <input type="text" name="name" value="{{weapon.Weapon_Type}}"><br>
+    Magical: <input type="text" name="name" value="{{weapon.Magical}}"><br>
+</form>
+<button onclick="updateWeapon({{weapon.Weapon_id}})">Update</button>

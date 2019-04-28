@@ -1,0 +1,38 @@
+
+	<H1>Race Management</H1>
+	<H2>Here you can track the Races in the database</H2>
+	<H3>Below is a list of Races. At the bottom you can add new Races with the webform</H3>
+	Search Name:<input type="text" id="name" name="name">
+	
+	<input type="submit" name="Submit">
+	<table id ="table">
+	<thead>
+		<tr>
+			<th ID = "Race_id" type ="hidden"></th>
+			<th id = "name">Name</th>
+			<th id = "Pro">pro</th>
+			<th id="Con">Con</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		{{#each races}}
+		<tr>
+			<td type='hidden'>{{Race_id}}</td>
+			<td>{{name}}</td>
+			<td>{{Pro}}</td>
+			<td>{{Con}}</td>
+		
+		</tr>
+		{{/each}}
+	</tbody>
+	</table>
+	<form id ="addRace" action="/Race" method="post">
+		<fieldset>
+			Name:<input type="text" id="name" name="name">
+			Pro:<input type="text" id="Pro" name="Pro">
+			Con:<input type="text" id="Con" name="Con">
+		
+			<input type="submit" name="Submit">
+		</fieldset>
+	</form>
